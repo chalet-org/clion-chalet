@@ -5,7 +5,7 @@
     <vendor url="https://www.chalet-work.space/contact">Chalet</vendor>
     <version>0.0.1</version>
     <description><![CDATA[
-    <h1>Chalet for Visual Studio Code</h1>
+    <h1>Chalet for CLion</h1>
     <h4><a href="https://github.com/chalet-org/chalet">Repository</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/chalet-org/chalet/issues">Issues</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.chalet-work.space">Website/Docs</a></h4>
     <h2>Features</h2>
     <p>This extension integrates the Chalet command line application into Visual Studio Code, so that one can open project folders and build &amp; test their applications with an easy-to-use interface. Chalet is a cross-platform JSON-based project &amp; build tool, built primarily for C++ and C.</p>
