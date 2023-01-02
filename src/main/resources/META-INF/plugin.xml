@@ -3,7 +3,6 @@
     <id>com.chalet.clionchalet</id>
     <name>Chalet</name>
     <vendor url="https://www.chalet-work.space/contact">Chalet</vendor>
-    <version>0.0.1</version>
     <description><![CDATA[
     <h1>Chalet for CLion</h1>
     <h4><a href="https://github.com/chalet-org/chalet">Repository</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/chalet-org/chalet/issues">Issues</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.chalet-work.space">Website/Docs</a></h4>
