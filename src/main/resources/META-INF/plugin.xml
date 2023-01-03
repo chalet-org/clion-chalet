@@ -12,19 +12,51 @@
     <p>For more information, visit the <a href="https://www.chalet-work.space">Website</a>, <a href="https://www.chalet-work.space/docs">Documentation</a> as well as the <a href="https://www.chalet-work.space/integrations/clion">extension guide</a>.</p>
   ]]></description>
     <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.plugins.terminal</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <fileType
+            name="Chalet Settings File"
+            implementationClass="com.chalet.clionchalet.ChaletSettingsFileType"
+            extensions="chaletrc"
+            fileNames=".chaletrc;.chalet/config.json"
+            language="JSON"
+        />
     </extensions>
     <actions>
-        <group id="chalet.GreetingMenu" text="Greeting" description="Greeting menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
+        <group
+            id="chalet.ChaletMenu"
+            text="Chalet (Debug)"
+            description="Chalet debug menu"
+            popup="true"
+            icon="AllIcons.Nodes.HomeFolder"
+        >
+            <add-to-group group-id="BuildMenu" anchor="last" />
             <action
-              id="chalet.HelloAction"
-              class="com.chalet.clionchalet.HelloAction"
-              text="Hello Action"
-              description="Says hello"
+                id="chalet.GetSettingsState"
+                class="com.chalet.clionchalet.GetSettingsState"
+                text="Get Settings State"
+                description="Retrieves the projects state from .chaletrc"
+            />
+            <action
+                id="chalet.TestVersionCheck"
+                class="com.chalet.clionchalet.TestVersionCheck"
+                text="Test Version Check"
+                description="Tests out the chalet version check"
+            />
+            <action
+                id="chalet.TestErrorMessage"
+                class="com.chalet.clionchalet.TestErrorMessage"
+                text="Test Error Message"
+                description="Shows an error message"
+            />
+            <action
+                id="chalet.TestTerminalCommand"
+                class="com.chalet.clionchalet.TestTerminalCommand"
+                text="Test Terminal Command"
+                description="Maybe runs chalet in a terminal instance"
             />
         </group>
     </actions>
