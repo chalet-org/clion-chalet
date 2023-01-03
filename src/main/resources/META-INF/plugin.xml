@@ -24,6 +24,19 @@
             fileNames=".chaletrc;.chalet/config.json"
             language="JSON"
         />
+        <fileType
+            name="Chalet Build File"
+            implementationClass="com.chalet.clionchalet.ChaletBuildFileType"
+            extensions="json"
+            fileNames="chalet.json"
+            language="JSON"
+        />
+        <json.jsonSchemaEnabler implementation="com.chalet.clionchalet.ChaletBuildSchemaEnabler" />
+        <json.jsonSchemaEnabler implementation="com.chalet.clionchalet.ChaletSettingsSchemaEnabler" />
+    </extensions>
+    <extensions defaultExtensionNs="JavaScript.JsonSchema">
+        <ProviderFactory implementation="com.chalet.clionchalet.ChaletBuildSchemaProviderFactory" />
+        <ProviderFactory implementation="com.chalet.clionchalet.ChaletSettingsSchemaProviderFactory" />
     </extensions>
     <actions>
         <group
