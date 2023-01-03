@@ -53,6 +53,9 @@ class ChaletBuildSchemaProvider : JsonSchemaFileProvider {
             val str = getProcessOutput(chalet, arrayOf("query", "schema-chalet-json")) ?: throw Error("Chalet not found")
 
             cachedFile!!.setBinaryContent(str.toByteArray(Charset.defaultCharset()));
+
+            println("created chalet schema");
+
             cachedFile as LightVirtualFile
         }
 
