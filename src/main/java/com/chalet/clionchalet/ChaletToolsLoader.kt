@@ -3,7 +3,7 @@ package com.chalet.clionchalet
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.project.Project
 
-class VersionHelper(val valid: Boolean, val ver: SemanticVersion) {
+class VersionHelper(private val valid: Boolean, private val ver: SemanticVersion) {
     operator fun component1(): Boolean = valid
     operator fun component2(): SemanticVersion = ver
 }
@@ -66,7 +66,7 @@ class ChaletToolsLoader(project: Project) {
                             BrowserUtil.browse("https://www.chalet-work.space/download")
                         }
                     }
-                );
+                )
             }
 
             checkedVersion = true

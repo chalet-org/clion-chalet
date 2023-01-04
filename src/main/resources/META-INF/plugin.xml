@@ -4,13 +4,13 @@
     <name>Chalet</name>
     <vendor url="https://www.chalet-work.space/contact">Chalet</vendor>
     <description><![CDATA[
-    <h1>Chalet for CLion</h1>
-    <h4><a href="https://github.com/chalet-org/chalet">Repository</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/chalet-org/chalet/issues">Issues</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.chalet-work.space">Website/Docs</a></h4>
-    <h2>Features</h2>
-    <p>This extension integrates the Chalet command line application into Visual Studio Code, so that one can open project folders and build &amp; test their applications with an easy-to-use interface. Chalet is a cross-platform JSON-based project &amp; build tool, built primarily for C++ and C.</p>
-    <p>This extension currently requires an existing Chalet installation. The latest version can be <a href="https://www.chalet-work.space/download">downloaded from here</a>.</p>
-    <p>For more information, visit the <a href="https://www.chalet-work.space">Website</a>, <a href="https://www.chalet-work.space/docs">Documentation</a> as well as the <a href="https://www.chalet-work.space/integrations/clion">extension guide</a>.</p>
-  ]]></description>
+        <h1>Chalet for CLion</h1>
+        <h4><a href="https://github.com/chalet-org/chalet">Repository</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/chalet-org/chalet/issues">Issues</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.chalet-work.space">Website/Docs</a></h4>
+        <h2>Features</h2>
+        <p>This extension integrates the Chalet command line application into Visual Studio Code, so that one can open project folders and build &amp; test their applications with an easy-to-use interface. Chalet is a cross-platform JSON-based project &amp; build tool, built primarily for C++ and C.</p>
+        <p>This extension currently requires an existing Chalet installation. The latest version can be <a href="https://www.chalet-work.space/download">downloaded from here</a>.</p>
+        <p>For more information, visit the <a href="https://www.chalet-work.space">Website</a>, <a href="https://www.chalet-work.space/docs">Documentation</a> as well as the <a href="https://www.chalet-work.space/integrations/clion">extension guide</a>.</p>
+    ]]></description>
     <depends>com.intellij.modules.lang</depends>
     <depends>org.jetbrains.plugins.terminal</depends>
 
@@ -48,10 +48,16 @@
         >
             <add-to-group group-id="BuildMenu" anchor="last" />
             <action
+                id="chalet.GetChaletState"
+                class="com.chalet.clionchalet.GetChaletState"
+                text="Get Chalet State"
+                description="Retrieves the project's state from chalet.json"
+            />
+            <action
                 id="chalet.GetSettingsState"
                 class="com.chalet.clionchalet.GetSettingsState"
                 text="Get Settings State"
-                description="Retrieves the projects state from .chaletrc"
+                description="Retrieves the project's settings state from .chaletrc"
             />
             <action
                 id="chalet.TestVersionCheck"

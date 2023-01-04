@@ -8,10 +8,10 @@ import com.jetbrains.jsonSchema.impl.JsonSchemaVersion
 import java.nio.charset.Charset
 
 class ChaletSettingsSchemaProvider : JsonSchemaFileProvider {
-    private var cachedFile: LightVirtualFile? = null;
+    private var cachedFile: LightVirtualFile? = null
 
     override fun isAvailable(file: VirtualFile): Boolean {
-        return SchemaUtils.isSettingsFile(file);
+        return SchemaUtils.isSettingsFile(file)
     }
 
     override fun getName(): String {
@@ -58,6 +58,5 @@ class ChaletSettingsSchemaProvider : JsonSchemaFileProvider {
 
             cachedFile as LightVirtualFile
         }
-
     }
 }
