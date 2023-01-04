@@ -7,7 +7,7 @@ import com.jetbrains.jsonSchema.extension.JsonSchemaEnabler
 
 class ChaletSettingsSchemaEnabler : JsonSchemaEnabler {
     override fun isEnabledForFile(file: VirtualFile, project: Project?): Boolean {
-       return SchemaUtils.isSettingsFile(file);
+       return SchemaUtils.isSettingsFile(file)
     }
 
     override fun shouldShowSwitcherWidget(file: VirtualFile): Boolean {

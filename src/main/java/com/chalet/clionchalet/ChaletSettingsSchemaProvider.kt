@@ -19,8 +19,7 @@ class ChaletSettingsSchemaProvider : JsonSchemaFileProvider {
     }
 
     override fun getSchemaFile(): VirtualFile {
-        val file = createVirtualSchema()
-        return file
+        return createVirtualSchema()
     }
 
     override fun getSchemaType(): SchemaType {
@@ -47,14 +46,14 @@ class ChaletSettingsSchemaProvider : JsonSchemaFileProvider {
         return if (cachedFile != null) {
             cachedFile as LightVirtualFile
         } else {
-            cachedFile = LightVirtualFile(ChaletSettingsSchemaProviderFactory.SCHEMA_FILE_NAME);
+            cachedFile = LightVirtualFile(ChaletSettingsSchemaProviderFactory.SCHEMA_FILE_NAME)
 
             val chalet = ChaletVersion.Release
             val str = getProcessOutput(chalet, arrayOf("query", "schema-settings-json")) ?: throw Error("Chalet not found")
 
-            cachedFile!!.setBinaryContent(str.toByteArray(Charset.defaultCharset()));
+            cachedFile!!.setBinaryContent(str.toByteArray(Charset.defaultCharset()))
 
-            println("created settings schema");
+            println("created settings schema")
 
             cachedFile as LightVirtualFile
         }

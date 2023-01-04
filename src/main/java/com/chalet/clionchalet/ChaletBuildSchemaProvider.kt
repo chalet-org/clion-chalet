@@ -8,10 +8,10 @@ import com.jetbrains.jsonSchema.impl.JsonSchemaVersion
 import java.nio.charset.Charset
 
 class ChaletBuildSchemaProvider : JsonSchemaFileProvider {
-    private var cachedFile: LightVirtualFile? = null;
+    private var cachedFile: LightVirtualFile? = null
 
     override fun isAvailable(file: VirtualFile): Boolean {
-        return SchemaUtils.isBuildFile(file);
+        return SchemaUtils.isBuildFile(file)
     }
 
     override fun getName(): String {
@@ -19,8 +19,7 @@ class ChaletBuildSchemaProvider : JsonSchemaFileProvider {
     }
 
     override fun getSchemaFile(): VirtualFile {
-        val file = createVirtualSchema()
-        return file
+        return createVirtualSchema()
     }
 
     override fun getSchemaType(): SchemaType {
@@ -47,14 +46,14 @@ class ChaletBuildSchemaProvider : JsonSchemaFileProvider {
         return if (cachedFile != null) {
             cachedFile as LightVirtualFile
         } else {
-            cachedFile = LightVirtualFile(ChaletBuildSchemaProviderFactory.SCHEMA_FILE_NAME);
+            cachedFile = LightVirtualFile(ChaletBuildSchemaProviderFactory.SCHEMA_FILE_NAME)
 
             val chalet = ChaletVersion.Release
             val str = getProcessOutput(chalet, arrayOf("query", "schema-chalet-json")) ?: throw Error("Chalet not found")
 
-            cachedFile!!.setBinaryContent(str.toByteArray(Charset.defaultCharset()));
+            cachedFile!!.setBinaryContent(str.toByteArray(Charset.defaultCharset()))
 
-            println("created chalet schema");
+            println("created chalet schema")
 
             cachedFile as LightVirtualFile
         }

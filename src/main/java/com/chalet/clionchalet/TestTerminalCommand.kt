@@ -3,14 +3,13 @@ package com.chalet.clionchalet
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.project.DumbAwareAction
-import com.jediterm.terminal.ui.TerminalPanelListener
 import org.jetbrains.plugins.terminal.ShellTerminalWidget
 import org.jetbrains.plugins.terminal.TerminalView
 import java.io.IOException
 
 
 class TestTerminalCommand : DumbAwareAction() {
-    private var terminal: ShellTerminalWidget? = null;
+    private var terminal: ShellTerminalWidget? = null
 
     override fun actionPerformed(event: AnActionEvent) {
 

@@ -7,7 +7,7 @@ import com.jetbrains.jsonSchema.extension.JsonSchemaProviderFactory
 
 class ChaletSettingsSchemaProviderFactory : JsonSchemaProviderFactory, DumbAware {
     override fun getProviders(project: Project): List<JsonSchemaFileProvider> {
-        val provider = ChaletSettingsSchemaProvider();
+        val provider = ChaletSettingsSchemaProvider()
         return listOf(provider)
     }
 

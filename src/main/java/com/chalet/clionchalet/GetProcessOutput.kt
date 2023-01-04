@@ -12,7 +12,7 @@ fun getProcessOutput(executable: String, args: Array<String>, env: Map<String, S
             .redirectOutput(ProcessBuilder.Redirect.PIPE)
             .redirectError(ProcessBuilder.Redirect.PIPE)
 
-        val procEnv = proc.environment();
+        val procEnv = proc.environment()
         for ((key,value) in env) {
             procEnv[key] = value
         }
@@ -20,9 +20,9 @@ fun getProcessOutput(executable: String, args: Array<String>, env: Map<String, S
         val started = proc.start()
         started.waitFor(5, TimeUnit.SECONDS)
 
-        var ret = started.inputStream.bufferedReader().readText();
+        var ret = started.inputStream.bufferedReader().readText()
         while (ret.endsWith("\n") || ret.endsWith("\r")) {
-            ret = ret.dropLast(1);
+            ret = ret.dropLast(1)
         }
         ret
     } catch(e: IOException) {

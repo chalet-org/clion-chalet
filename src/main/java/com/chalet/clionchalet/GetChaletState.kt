@@ -4,7 +4,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.project.DumbAwareAction
 import com.intellij.openapi.ui.Messages
-import kotlinx.coroutines.runBlocking
 import org.json.simple.parser.JSONParser
 
 class GetChaletState : DumbAwareAction() {
